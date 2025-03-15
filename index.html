@@ -1,256 +1,238 @@
+```html name=website.html
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شركة العوالم - للحلول البرمجة</title>
+    <title>عوالم - خدمات برمجة وتصميم</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM4fR8C+eHf3s0nE4p7z5ZB6m5A5w5FfKJ6J5S5" crossorigin="anonymous">
     <style>
-        /* تصميم الهيكل الأساسي للصفحة */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            direction: rtl;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
         }
-        body {
-            background: #f7f7f7;
-            color: #333;
-        }
-
-        /* الهيدر */
         header {
-            background: url('img/header.jpeg') no-repeat center center/cover;
-            height: 500px;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        header h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-top: 100px;
-        }
-        header h2 {
-            font-size: 24px;
-            margin-top: 20px;
-        }
-
-        /* الفقرات */
-        section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-        section img {
-            width: 300px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        section img:hover {
-            transform: scale(1.05);
-        }
-        .service {
-            margin: 50px 0;
-        }
-        .service h3 {
-            font-size: 30px;
-            margin-bottom: 20px;
-            color: #4CAF50;
-        }
-        .service p {
-            font-size: 18px;
-            color: #555;
-            margin-bottom: 20px;
-        }
-        .price {
-            font-size: 20px;
-            color: #e91e63;
-            margin-bottom: 20px;
-        }
-
-        /* قسم تواصل عبر واتساب */
-        .contact-button {
-            background-color: #25d366;
-            color: white;
-            padding: 12px 30px;
-            font-size: 18px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-        }
-
-        .contact-button:hover {
-            background-color: #128c7e;
-        }
-
-        /* المعرض الدائري */
-        .carousel {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80%;
-            height: 300px;
+            background: url('header-image.jpg') no-repeat center center/cover;
+            height: 50vh;
+            color: #fff;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 50%;
-            overflow: hidden;
-            animation: rotate 20s infinite linear;
-        }
-
-        .carousel img {
-            width: 150px;
-            margin: 0 15px;
-        }
-
-        @keyframes rotate {
-            0% { transform: translate(-50%, -50%) rotate(0deg); }
-            100% { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-
-        /* الفوتر */
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 30px 20px;
             text-align: center;
         }
-        footer a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
         }
-        footer a:hover {
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1rem;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+        }
+        #main {
+            transition: margin-right .5s;
+            padding: 16px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        footer .contact {
+            display: flex;
+            flex-direction: column;
+        }
+        footer .contact a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0.5rem 0;
+        }
+        footer .contact a:hover {
             text-decoration: underline;
         }
-
-        /* تصميم متجاوب */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 36px;
-            }
-            header h2 {
-                font-size: 18px;
-            }
-            .service h3 {
-                font-size: 24px;
-            }
-            .price {
-                font-size: 18px;
-            }
-            
+        footer .social {
+            display: flex;
+            align-items: center;
+        }
+        footer .social a {
+            color: #fff;
+            font-size: 2rem;
+            margin: 0 0.5rem;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .gallery img {
+            width: 30%;
+            margin: 1rem;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-
-    <!-- الهيدر -->
     <header>
-        <h1>شركة العوالم</h1>
-        <h2>حلول برمجة متطورة لجميع احتياجاتك</h2>
+        <h1>مرحبا بكم في عوالم</h1>
     </header>
 
-    <!-- قسم وصف الخدمات -->
-  
+    <nav>
+        <a href="#home">الرئيسية</a>
+        <div class="dropdown">
+            <a href="#services">خدماتنا</a>
+            <div class="dropdown-content">
+                <a href="#web-design">تصميم مواقع الويب</a>
+                <a href="#mobile-apps">برمجة تطبيقات المحمول</a>
+                <a href="#desktop-apps">برامج الحاسوب</a>
+            </div>
+        </div>
+        <a href="#about">من نحن</a>
+        <a href="#contact">اتصل بنا</a>
+    </nav>
 
-    <div class="carousel-container">
-    <div class="carousel">
-        <img src="img/1.jpeg" alt="مواقع تفاعلية متطورة بلغة js html css" onclick="window.location.href='1.html';">
-        <img src="img/2.jpeg" alt="خوادم إدارة المعلومات بقواعد البيانات mysql php" onclick="window.location.href='2.html';">
-        <img src="img/3.jpeg" alt="تطبيقات الاندرويد و الايفون و الحواسيب بأحدث ما توصلت إليه تكنلوجيا المعلومات" onclick="window.location.href='3.html';">
-        <img src="img/4.jpeg" alt="إدارة و تحديث المواقع الإلكترونية للمؤسسات و الشركات و العملاء" onclick="window.location.href='4.html';">
+    <div id="main">
+        <div id="home">
+            <h2>خدماتنا</h2>
+            <p>نحن في عوالم نقدم خدمات برمجة وتصميم مواقع الويب وتطبيقات المحمول وبرامج الحاسوب. فريقنا من المحترفين جاهز لتحويل أفكارك إلى واقع ملموس.</p>
+        </div>
+        <div id="services">
+            <h2>خدماتنا</h2>
+            <section id="web-design">
+                <h3>تصميم مواقع الويب</h3>
+                <p>نقوم بتصميم مواقع ويب متجاوبة وجذابة تلبي احتياجات أعمالك.</p>
+            </section>
+            <section id="mobile-apps">
+                <h3>برمجة تطبيقات المحمول</h3>
+                <p>نطور تطبيقات محمولة لنظامي أندرويد وآيفون لتلبية احتياجاتك.</p>
+            </section>
+            <section id="desktop-apps">
+                <h3>برامج الحاسوب</h3>
+                <p>نقدم حلول برمجية لأجهزة الحاسوب على نظام وندوز.</p>
+            </section>
+        </div>
+        <div id="about">
+            <h2>من نحن</h2>
+            <p>عوالم هي شركة رائدة في مجال البرمجة والتصميم. نحن ملتزمون بتقديم أفضل الخدمات لعملائنا.</p>
+        </div>
+        <div id="contact">
+            <h2>اتصل بنا</h2>
+            <p>للتواصل معنا:</p>
+            <p>واتساب: 0912500618</p>
+            <p>هاتف: 01122394912</p>
+        </div>
+        <div class="gallery">
+            <img src="project1.jpg" alt="Project 1">
+            <img src="project2.jpg" alt="Project 2">
+            <img src="project3.jpg" alt="Project 3">
+        </div>
     </div>
-</div>
 
-<style>
-    .carousel-container {
-        width: 80%;
-        overflow: hidden;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        margin: auto;
-    }
-
-    .carousel {
-        display: flex;
-        transition: transform 1s ease-in-out;
-    }
-
-    .carousel img {
-        width: 100%;
-        height: auto;
-        border-radius: 15px;
-        cursor: pointer;
-        transition: transform 0.3s ease;
-    }
-
-    .carousel img:hover {
-        transform: scale(1.05);
-    }
-
-    /* الحركات */
-    @keyframes slide {
-        0% {
-            transform: translateX(0);
-        }
-        25% {
-            transform: translateX(-100%);
-        }
-        50% {
-            transform: translateX(-200%);
-        }
-        75% {
-            transform: translateX(-300%);
-        }
-        100% {
-            transform: translateX(0);
-        }
-    }
-
-    /* إضافة الحركة على المعرض */
-    .carousel {
-        animation: slide 15s infinite;
-    }
-</style>
-
-<script>
-    // يمكن إضافة وظائف إضافية هنا باستخدام JavaScript إذا أردت.
-</script>
-
-
-    <!-- فقرة 1 - موقع الكتروني -->
-    <section class="service">
-        <img src="img/web.jpeg" alt="موقع الكتروني">
-        <h3>احصل على موقعك الالكتروني</h3>
-        <p>فقط بتكلفة 500,000 جنيه سوداني</p>
-        <div class="price">500,000 جنيه سوداني</div>
-    </section>
-
-    <!-- فقرة 2 - تطبيق هاتف -->
-    <section class="service">
-        <img src="img/app.jpeg" alt="تطبيق هاتف">
-        <h3>احصل على تطبيق هاتف لأعمالك</h3>
-        <p>فقط بتكلفة 1,000,000 جنيه سوداني</p>
-        <div class="price">1,000,000 جنيه سوداني</div>
-    </section>
-
-    <!-- فقرة 3 - برنامج إدارة بيانات -->
-    <section class="service">
-        <img src="img/pro.jpeg" alt="برنامج إدارة بيانات">
-        <h3>  إذا كنت تملك شركة معهد متجر او اي نشاط تجاري نحن نوفر لك الحلول التقنية المتطورة لإدارة و تخزين بيانات اعمالك و تخصيص ذالك حسب إحتياجات اعمالك في نظام ويب او برنامج حاسوب  </h3>
-        <p>فقط بتكلفة 300,000 جنيه سوداني</p>
-        <div class="price">300,000 جنيه سوداني</div>
-    </section>
-  <section>
-        <p>تصميم و برمجة و إدارة مواقع الشركات و المؤسسات و الأعمال التجارية في مختلف المجالات</p>
-        <a href="https://wa.me/+249912500618" class="contact-button" target="_blank">تواصل معنا عبر واتساب</a>
-    </section>
-    <!-- الفوتر -->
     <footer>
-      
+        <div class="contact">
+            <a href="tel:0912500618">واتساب: 0912500618</a>
+            <a href="tel:01122394912">هاتف: 01122394912</a>
+        </div>
+        <div class="social">
+            <a href="https://wa.me/0912500618"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </footer>
 
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">اتصل بنا</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; القائمة</button>  
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginRight= "0";
+        }
+    </script>
 </body>
 </html>
+```
