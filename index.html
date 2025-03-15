@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>شركة العوالم - للحلول البرمجة</title>
+    <style>
+        /* تصميم الهيكل الأساسي للصفحة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f7f7f7;
+            color: #333;
+        }
+
+        /* الهيدر */
+        header {
+            background: url('header.jpeg') no-repeat center center/cover;
+            height: 500px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        header h1 {
+            font-size: 48px;
+            font-weight: bold;
+            margin-top: 100px;
+        }
+        header h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* الفقرات */
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        section img {
+            width: 300px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        section img:hover {
+            transform: scale(1.05);
+        }
+        .service {
+            margin: 50px 0;
+        }
+        .service h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .service p {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        .price {
+            font-size: 20px;
+            color: #e91e63;
+            margin-bottom: 20px;
+        }
+
+        /* قسم تواصل عبر واتساب */
+        .contact-button {
+            background-color: #25d366;
+            color: white;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .contact-button:hover {
+            background-color: #128c7e;
+        }
+
+        /* المعرض الدائري */
+        .carousel {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            overflow: hidden;
+            animation: rotate 20s infinite linear;
+        }
+
+        .carousel img {
+            width: 150px;
+            margin: 0 15px;
+        }
+
+        @keyframes rotate {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* تصميم متجاوب */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 36px;
+            }
+            header h2 {
+                font-size: 18px;
+            }
+            .service h3 {
+                font-size: 24px;
+            }
+            .price {
+                font-size: 18px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر -->
+    <header>
+        <h1>شركة العوالم</h1>
+        <h2>حلول برمجة متطورة لجميع احتياجاتك</h2>
+    </header>
+
+    <!-- قسم وصف الخدمات -->
+  
+
+    <div class="carousel-container">
+    <div class="carousel">
+        <img src="1.jpeg" alt="مواقع تفاعلية متطورة بلغة js html css" onclick="window.location.href='1.html';">
+        <img src="2.jpeg" alt="خوادم إدارة المعلومات بقواعد البيانات mysql php" onclick="window.location.href='2.html';">
+        <img src="3.jpeg" alt="تطبيقات الاندرويد و الايفون و الحواسيب بأحدث ما توصلت إليه تكنلوجيا المعلومات" onclick="window.location.href='3.html';">
+        <img src="4.jpeg" alt="إدارة و تحديث المواقع الإلكترونية للمؤسسات و الشركات و العملاء" onclick="window.location.href='4.html';">
+    </div>
+</div>
+
+<style>
+    .carousel-container {
+        width: 80%;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+    }
+
+    .carousel {
+        display: flex;
+        transition: transform 1s ease-in-out;
+    }
+
+    .carousel img {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .carousel img:hover {
+        transform: scale(1.05);
+    }
+
+    /* الحركات */
+    @keyframes slide {
+        0% {
+            transform: translateX(0);
+        }
+        25% {
+            transform: translateX(-100%);
+        }
+        50% {
+            transform: translateX(-200%);
+        }
+        75% {
+            transform: translateX(-300%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
+
+    /* إضافة الحركة على المعرض */
+    .carousel {
+        animation: slide 15s infinite;
+    }
+</style>
+
+<script>
+    // يمكن إضافة وظائف إضافية هنا باستخدام JavaScript إذا أردت.
+</script>
+
+
+    <!-- فقرة 1 - موقع الكتروني -->
+    <section class="service">
+        <img src="web.jpeg" alt="موقع الكتروني">
+        <h3>احصل على موقعك الالكتروني</h3>
+        <p>فقط بتكلفة 500,000 جنيه سوداني</p>
+        <div class="price">500,000 جنيه سوداني</div>
+    </section>
+
+    <!-- فقرة 2 - تطبيق هاتف -->
+    <section class="service">
+        <img src="app.jpeg" alt="تطبيق هاتف">
+        <h3>احصل على تطبيق هاتف لأعمالك</h3>
+        <p>فقط بتكلفة 1,000,000 جنيه سوداني</p>
+        <div class="price">1,000,000 جنيه سوداني</div>
+    </section>
+
+    <!-- فقرة 3 - برنامج إدارة بيانات -->
+    <section class="service">
+        <img src="pro.jpeg" alt="برنامج إدارة بيانات">
+        <h3>  إذا كنت تملك شركة معهد متجر او اي نشاط تجاري نحن نوفر لك الحلول التقنية المتطورة لإدارة و تخزين بيانات اعمالك و تخصيص ذالك حسب إحتياجات اعمالك في نظام ويب او برنامج حاسوب  </h3>
+        <p>فقط بتكلفة 300,000 جنيه سوداني</p>
+        <div class="price">300,000 جنيه سوداني</div>
+    </section>
+  <section>
+        <p>تصميم و برمجة و إدارة مواقع الشركات و المؤسسات و الأعمال التجارية في مختلف المجالات</p>
+        <a href="https://wa.me/+249912500618" class="contact-button" target="_blank">تواصل معنا عبر واتساب</a>
+    </section>
+    <!-- الفوتر -->
+    <footer>
+      
+    </footer>
+
+</body>
+</html>
