@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Tajawal', sans-serif; /* تغيير الخط إلى Tajawal */
         }
         body {
-            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            background: #f7f7f7;
             color: #333;
             line-height: 1.6;
         }
@@ -21,76 +21,69 @@
         /* الهيدر */
         header {
             background: url('header.jpeg') no-repeat center center/cover;
-            height: 450px;
+            height: 400px; /* تقليل ارتفاع الهيدر */
             text-align: center;
             color: white;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: relative;
         }
         header h1 {
-            font-size: 40px;
+            font-size: 36px; /* تصغير حجم الخط */
             font-weight: bold;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* تأثير ظل النص */
         }
         header h2 {
-            font-size: 20px;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* تأثير ظل النص */
+            font-size: 18px; /* تصغير حجم الخط */
         }
 
         /* الفقرات */
         section {
-            padding: 50px 20px;
+            padding: 40px 20px;
             text-align: center;
-            border-bottom: 1px solid #ddd; /* إضافة خط فاصل بين الأقسام */
         }
         section img {
-            width: 80%;
-            max-width: 350px;
-            margin-bottom: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* تأثير ظل الصور */
-            transition: transform 0.3s ease-in-out;
+            width: 80%; /* جعل الصور تستجيب للعرض */
+            max-width: 300px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
         section img:hover {
-            transform: scale(1.03);
+            transform: scale(1.05);
         }
         .service {
-            margin: 50px 0;
+            margin: 40px 0;
         }
         .service h3 {
-            font-size: 28px;
-            margin-bottom: 20px;
+            font-size: 24px; /* تصغير حجم الخط */
+            margin-bottom: 15px;
             color: #4CAF50;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
         .service p {
-            font-size: 18px;
+            font-size: 16px; /* تصغير حجم الخط */
             color: #555;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         .price {
-            font-size: 22px;
+            font-size: 18px; /* تصغير حجم الخط */
             color: #e91e63;
-            margin-bottom: 20px;
-            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         /* قسم تواصل عبر واتساب */
         .contact-button {
             background-color: #25d366;
             color: white;
-            padding: 12px 30px;
-            font-size: 18px;
+            padding: 10px 25px;
+            font-size: 16px; /* تصغير حجم الخط */
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
-            margin-top: 25px;
-            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
         }
+
         .contact-button:hover {
             background-color: #128c7e;
         }
@@ -98,23 +91,18 @@
         /* المعرض المتحرك */
         .carousel-container {
             width: 90%;
-            margin: 30px auto;
+            margin: 20px auto;
             overflow: hidden;
-            border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 10px;
         }
         .carousel {
             display: flex;
-            animation: slide 20s infinite linear;
+            animation: slide 15s infinite linear;
         }
         .carousel img {
             width: 100%;
             height: auto;
             flex-shrink: 0;
-            transition: transform 0.3s ease-in-out;
-        }
-        .carousel img:hover {
-            transform: scale(1.05);
         }
         @keyframes slide {
             0% { transform: translateX(0); }
@@ -125,7 +113,7 @@
         footer {
             background-color: #333;
             color: white;
-            padding: 30px;
+            padding: 20px;
             text-align: center;
         }
         footer a {
@@ -140,80 +128,27 @@
         /* تصميم متجاوب */
         @media (max-width: 768px) {
             header h1 {
-                font-size: 32px;
+                font-size: 30px;
             }
             header h2 {
-                font-size: 18px;
+                font-size: 16px;
             }
             .service h3 {
-                font-size: 24px;
+                font-size: 20px;
             }
             .price {
-                font-size: 20px;
+                font-size: 16px;
             }
         }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-<header>
-    <div class="top-header">
-        <a href="#">الرئيسية</a>
-        <a href="#">خدماتنا</a>
-        <a href="#">تواصل معنا</a>
-    </div>
-    </header>
+
     <header>
         <h1>شركة العوالم</h1>
-        <h2>حلول برمجية متطورة لجميع احتياجاتك</h2>
+        <h2>حلول برمجة متطورة لجميع احتياجاتك</h2>
     </header>
-
-
-<style>
-    /* الهيدر */
-    header {
-        background: url('header.jpeg') no-repeat center center/cover;
-        height: 500px;
-        text-align: center;
-        color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-    header h1 {
-        font-size: 40px;
-        font-weight: bold;
-        margin-bottom: 10px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-    header h2 {
-        font-size: 20px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    }
-
-    /* عناصر الهيدر العلوية */
-    .top-header {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        display: flex;
-    }
-    .top-header a {
-        color: white;
-        text-decoration: none;
-        margin-left: 20px;
-        padding: 8px 15px;
-        border-radius: 5px;
-        background-color: rgba(255, 255, 255, 0.1);
-        transition: background-color 0.3s ease-in-out;
-    }
-    .top-header a:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-</style>
-
 
     <div class="carousel-container">
         <div class="carousel">
